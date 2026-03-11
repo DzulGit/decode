@@ -9,7 +9,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://decode-sandy.vercel.app/" // ganti dengan URL Vercel kamu
+    "https://decode-sandy.vercel.app" // ganti dengan URL Vercel kamu
   ]
 }));
 app.use(express.json());
