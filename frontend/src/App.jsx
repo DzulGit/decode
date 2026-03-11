@@ -58,11 +58,12 @@ function generateChallenge(level) {
 
 // ── Hint generator via Claude API ────────────────────────────────────────────
 async function fetchHint(encodedText, attemptCount) {
-  const res = await fetch("http://localhost:3001/api/hint","https://decode-backend-production.up.railway.app/api/hint", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ encodedText, attemptCount }),
-  });
+
+const res = await fetch("https://decode-backend-production.up.railway.app/api/hint", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ encodedText, attemptCount }),
+});
   const data = await res.json();
   return data.hint || "Look carefully at the character set and structure.";
 }
