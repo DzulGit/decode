@@ -59,7 +59,7 @@ function generateChallenge(level) {
 // ── Hint generator via Claude API ────────────────────────────────────────────
 async function fetchHint(encodedText, attemptCount) {
 
-const res = await fetch("https://decode-backend-production.up.railway.app/api/hint", {
+const res = await fetch("https://decode-production-80d5.up.railway.app/api/hint", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({ encodedText, attemptCount }),
