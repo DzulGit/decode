@@ -7,11 +7,11 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "decode-sandy.vercel.app" // ganti dengan URL Vercel kamu
-  ]
+  origin: ["https://decode-sandy.vercel.app", "http://localhost:5173"],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"]
 }));
+app.options("*", cors());
 app.use(express.json());
 
 app.post("/api/hint", async (req, res) => {
